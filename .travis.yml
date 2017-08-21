@@ -17,6 +17,6 @@ script:
 
 deploy:
     - provider: script
-      script: push_to_dockerhub.sh
+      script: chmod +x ./push_to_dockerhub.sh && ./push_to_dockerhub.sh
       on:
           condition: $TRAVIS_BRANCH == "master" || -n $TRAVIS_TAG
