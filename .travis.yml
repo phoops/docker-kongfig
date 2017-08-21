@@ -18,5 +18,7 @@ script:
 deploy:
     - provider: script
       script: chmod +x ./push_to_dockerhub.sh && ./push_to_dockerhub.sh
+      skip_cleanup: true
       on:
+          all_branches: true
           condition: $TRAVIS_BRANCH == "master" || -n $TRAVIS_TAG
