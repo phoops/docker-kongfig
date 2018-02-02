@@ -1,7 +1,7 @@
-FROM centos/nodejs-6-centos7
+FROM node:8-alpine
 ENV VERSION=1.4.2
-WORKDIR /srv/app
+WORKDIR /srv
 COPY ./hello.sh .
-RUN ["/bin/bash", "-l", "-c", "npm install kongfig@$VERSION -g"]
+RUN ["/bin/sh", "-c", "npm install kongfig@$VERSION -g"]
 ENTRYPOINT []
 CMD ["./hello.sh"]
